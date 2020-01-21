@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\CreateTarget.cs" />
     <Compile Include="Assets\Script\PlayerMove.cs" />
     <Compile Include="Assets\Script\TargetTrigger.cs" />
+    <Compile Include="Assets\Script\UI_Start.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/UnityDemo/Demo1/Unity_Demo1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

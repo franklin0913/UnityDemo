@@ -20,8 +20,8 @@ public class CreateTarget : MonoBehaviour
         Timer += Time.deltaTime;
         if (Timer >= 2)
         {
-            float NewX = Random.Range(-4, 4);
-            float NewZ = Random.Range(-4, 4);
+            float NewX = Random.Range(-6, 6);
+            float NewZ = Random.Range(-6, 6);
             TargetClone = Instantiate(Target, new Vector3(NewX, 0, NewZ), Target.transform.rotation);
             Timer = 0;
         }
