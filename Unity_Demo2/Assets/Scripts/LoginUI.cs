@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using GameData;
 
 public class LoginUI : MonoBehaviour
@@ -16,6 +17,7 @@ public class LoginUI : MonoBehaviour
         {
             GameApplication.gamedata = new GameFlowData(UseridInput.text);
             Debug.Log(GameApplication.gamedata.UserID);
+            SceneManager.LoadScene("Game");
         });
     }
 

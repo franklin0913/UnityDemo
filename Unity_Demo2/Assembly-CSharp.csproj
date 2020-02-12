@@ -65,6 +65,11 @@
     <Compile Include="Assets\Scripts\GameApplication.cs" />
     <Compile Include="Assets\Scripts\GameFlowData.cs" />
     <Compile Include="Assets\Scripts\LoginUI.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogicFree.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\DemoFree.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControlFree.cs" />
+    <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
+    <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\FreeCelShader.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/UnityDemo/Unity_Demo2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
