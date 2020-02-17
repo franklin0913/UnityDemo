@@ -17,7 +17,7 @@ public class LoginUI : MonoBehaviour
         {
             GameApplication.gamedata = new GameFlowData(UseridInput.text);
             Debug.Log(GameApplication.gamedata.UserID);
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Game2");
         });
     }
 
