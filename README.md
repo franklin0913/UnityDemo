@@ -1,6 +1,5 @@
 ﻿# UnityDemo(For 3D遊戲動畫)
 這裡存放3D遊戲動畫上課所用Demo<br>
-<br>
 ### ✵Demo1✵<br>
 #### 目標:<br>
 &emsp;1.製作可移動的人物<br>
@@ -13,4 +12,5 @@
 &emsp;3.如何產生prefeb<br>
 &emsp;4.如何用鍵盤控制物件移動<br>
 &emsp;5.如何生成物件(並設定隨機位置)<br>
-&emsp;6.物件之間的碰撞觸發<br>
+&emsp;6.了解Rigibody的使用效果<br>
+&emsp;7.物件之間的碰撞觸發<br>
