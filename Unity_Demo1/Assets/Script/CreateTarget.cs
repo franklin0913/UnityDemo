@@ -22,7 +22,7 @@ public class CreateTarget : MonoBehaviour
         {
             float NewX = Random.Range(-6, 6);
             float NewZ = Random.Range(-6, 6);
-            TargetClone = Instantiate(Target, new Vector3(NewX, 0, NewZ), Target.transform.rotation);
+            TargetClone = Instantiate(Target, new Vector3(NewX, 2, NewZ), Quaternion.identity);
             Timer = 0;
         }
     }
