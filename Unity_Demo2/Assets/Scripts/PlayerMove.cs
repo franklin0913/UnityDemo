@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     public float h = 0;
     public float v = 0;
     private Vector3 _forward, _right;
-    public Rigidbody player;
+    private float _speed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +23,6 @@ public class PlayerMove : MonoBehaviour
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
 
-        if (Input.GetKey("w"))
-        {
-            v += 0.1f;
-            Move();
-        }
         if (Input.GetKey("d"))
         {
             h += 0.1f;
@@ -39,15 +34,29 @@ public class PlayerMove : MonoBehaviour
             Rotate();
         }
 
+        if (Input.GetKey("w"))
+        {
+            v += 0.1f;
+            _speed += 0.1f;
+            animator.SetFloat("Speed", _speed);
+            Move();
+        }
+        else if (Input.GetKey("s"))
+        {
+            _speed -= 0.5f;
+            animator.SetFloat("Speed", _speed);
+        }
+
+
         if (v >= 0.1f)
         {
             animator.SetBool("isMove", true);
         }
         else
         {
-            _forward = transform.forward;
-            _right = transform.right;
             animator.SetBool("isMove", false);
+            _speed = 0;
+            animator.SetFloat("Speed", _speed);
         }
     }
 
