@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TargetTrigger : MonoBehaviour
+public class UI_Game : MonoBehaviour
 {
+    public Text Score;
+    public static int counter=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,15 +17,6 @@ public class TargetTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "Player")
-        {
-            UI_Game.counter++;
-            Destroy(gameObject);
-        }
+        Score.text = counter.ToString();
     }
 }
