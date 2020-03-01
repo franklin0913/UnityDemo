@@ -22,31 +22,25 @@ public class PlayerMove : MonoBehaviour
     {
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
-
+        
         if (Input.GetKey("d"))
         {
-            h += 0.1f;
+            //h += 0.1f;
             Rotate();
         }
         else if (Input.GetKey("a"))
         {
-            h -= 0.1f;
+            //h -= 0.1f;
             Rotate();
         }
 
         if (Input.GetKey("w"))
         {
-            v += 0.1f;
+            //v += 0.1f;
             _speed += 0.1f;
             animator.SetFloat("Speed", _speed);
             Move();
         }
-        else if (Input.GetKey("s"))
-        {
-            _speed -= 0.5f;
-            animator.SetFloat("Speed", _speed);
-        }
-
 
         if (v >= 0.1f)
         {
@@ -54,9 +48,9 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isMove", false);
             _speed = 0;
             animator.SetFloat("Speed", _speed);
+            animator.SetBool("isMove", false);
         }
     }
 
