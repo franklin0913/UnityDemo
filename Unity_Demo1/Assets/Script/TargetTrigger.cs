@@ -24,4 +24,12 @@ public class TargetTrigger : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            Debug.Log("Hit!!!");
+        }
+    }
 }

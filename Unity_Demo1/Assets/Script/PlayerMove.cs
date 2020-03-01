@@ -17,22 +17,26 @@ public class PlayerMove : MonoBehaviour
         transform.rotation = new Quaternion(0, 0, 0, 1);
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position = transform.position + Vector3.forward * Speed;
+            transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+            //transform.position = transform.position + Vector3.forward * Speed;
             transform.rotation = new Quaternion(0.1f, 0, 0, 1);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + Vector3.back * Speed;
+            transform.Translate(Vector3.back * Speed * Time.deltaTime);
+            //transform.position = transform.position + Vector3.back * Speed;
             transform.rotation = new Quaternion(-0.1f, 0, 0, 1);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.position = transform.position + Vector3.right * Speed;
+            transform.Translate(Vector3.right * Speed * Time.deltaTime);
+            //transform.position = transform.position + Vector3.right * Speed;
             transform.rotation = new Quaternion(0, 0, -0.1f, 1);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.position = transform.position + Vector3.left * Speed;
+            transform.Translate(Vector3.left * Speed * Time.deltaTime);
+            //transform.position = transform.position + Vector3.left * Speed;
             transform.rotation = new Quaternion(0, 0, 0.1f, 1);
         }
     }
