@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Animator animator;
-    public float h = 0;
-    public float v = 0;
-    private Vector3 _forward, _right;
+    private float h = 0;
+    private float v = 0;
+    private float prev = 0;
+    private Vector3 _forward, _right, preposition;
     private float _speed = 0;
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        preposition = transform.position;
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
         
@@ -42,7 +44,18 @@ public class PlayerMove : MonoBehaviour
             Move();
         }
 
-        if (v >= 0.1f)
+        if (Input.GetKey(KeyCode.Space))
+        {
+            animator.SetBool("isJump_up", true);
+            transform.Translate(Vector3.up * Time.deltaTime * 10);
+        }
+
+        if (preposition.y == transform.position.y)
+        {
+            animator.SetBool("isJump_up", false);
+        }
+
+        if (prev <= v && v != 0)
         {
             animator.SetBool("isMove", true);
         }
@@ -52,12 +65,22 @@ public class PlayerMove : MonoBehaviour
             animator.SetFloat("Speed", _speed);
             animator.SetBool("isMove", false);
         }
+        prev = v;
     }
 
     public void Move()
     {
         Vector3 moveDir = (_forward * v) + (_right * h);//移動方向
-        transform.Translate(moveDir.normalized * Time.deltaTime * 2, Space.World);
+        Debug.Log("F:" + _forward + ",R:" + _right);
+        Debug.Log(moveDir.normalized);
+        if (_speed <= 10)
+        {
+            transform.Translate(moveDir.normalized * Time.deltaTime * 2, Space.World);
+        }
+        else
+        {
+            transform.Translate(moveDir.normalized * Time.deltaTime * 4, Space.World);
+        }
     }
 
     public void Rotate()
