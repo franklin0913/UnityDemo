@@ -11,8 +11,9 @@ public class UI_Start : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartBtn.onClick.AddListener(delegate 
+        StartBtn.onClick.AddListener(()=> 
         {
+            Debug.Log("切換場景");
             SceneManager.LoadScene("GameScene");
         });
     }
