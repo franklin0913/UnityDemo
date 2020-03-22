@@ -3,7 +3,7 @@ Temp/
 Output/
 TestData/
 GameData/
-
+Demo/
 #Ignore thumbnails created by Windows
 Thumbs.db
 #Ignore files built by Visual Studio
@@ -34,4 +34,6 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 .vs/
 #Nuget packages folder
+
+Demo.meta
 
