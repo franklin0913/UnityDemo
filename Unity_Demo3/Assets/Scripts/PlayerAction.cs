@@ -22,47 +22,27 @@ public class PlayerAction : MonoBehaviour
     {
         if (Input.GetKeyDown("w"))
         {
-            CatchPlayer._isCatch = false;
-            _anim.Play("Jump");
-            _isZaxis = true;
-            _isXaxis = false;
-            _starttime = Time.time;
             start = transform.position.z;
             end = start + 1;
-            _isCrash = false;
+            ZaxisMove();
         }
         else if (Input.GetKeyDown("s"))
         {
-            CatchPlayer._isCatch = false;
-            _anim.Play("Jump");
-            _isZaxis = true;
-            _isXaxis = false;
-            _starttime = Time.time;
             start = transform.position.z;
             end = start - 1;
-            _isCrash = false;
+            ZaxisMove();
         }
         else if (Input.GetKeyDown("d"))
         {
-            CatchPlayer._isCatch = false;
-            _anim.Play("Jump");
-            _isZaxis = false;
-            _isXaxis = true;
-            _starttime = Time.time;
             start = transform.position.x;
             end = start + 1;
-            _isCrash = false;
+            XaxisMove();
         }
         else if (Input.GetKeyDown("a"))
         {
-            CatchPlayer._isCatch = false;
-            _anim.Play("Jump");
-            _isZaxis = false;
-            _isXaxis = true;
-            _starttime = Time.time;
             start = transform.position.x;
             end = start - 1;
-            _isCrash = false;
+            XaxisMove();
         }
         if (_isZaxis && !_isCrash)
         {
@@ -86,5 +66,25 @@ public class PlayerAction : MonoBehaviour
             gameObject.transform.position = new Vector3(0, 0.475f, 0);
             Debug.Log("撞到障礙物了!!!");
         }
+    }
+
+    public void ZaxisMove()
+    {
+        CatchPlayer._isCatch = false;
+        _anim.Play("Jump");
+        _isZaxis = true;
+        _isXaxis = false;
+        _starttime = Time.time;
+        _isCrash = false;
+    }
+
+    public void XaxisMove()
+    {
+        CatchPlayer._isCatch = false;
+        _anim.Play("Jump");
+        _isZaxis = false;
+        _isXaxis = true;
+        _starttime = Time.time;
+        _isCrash = false;
     }
 }
