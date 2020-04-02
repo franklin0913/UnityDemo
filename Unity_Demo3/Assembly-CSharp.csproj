@@ -63,8 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CatchPlayer.cs" />
+    <Compile Include="Assets\Scripts\LoginUI.cs" />
     <Compile Include="Assets\Scripts\LoopMove.cs" />
     <Compile Include="Assets\Scripts\PlayerAction.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/1082CA/Unity_Demo3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
