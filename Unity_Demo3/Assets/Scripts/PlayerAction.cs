@@ -6,6 +6,7 @@ public class PlayerAction : MonoBehaviour
 {
     public Animation _anim;
     private bool _isZaxis = false, _isXaxis = false, _isCrash = false;
+     public static bool _isFinal = false;
     private float start, end;
     private float _starttime;
     private float lerpvalue;
@@ -65,6 +66,11 @@ public class PlayerAction : MonoBehaviour
             _isCrash = true;
             gameObject.transform.position = new Vector3(0, 0.475f, 0);
             Debug.Log("撞到障礙物了!!!");
+        }
+        else if (other.name == "Final")
+        {
+            _isFinal = true;
+            Debug.Log("到達終點");
         }
     }
 

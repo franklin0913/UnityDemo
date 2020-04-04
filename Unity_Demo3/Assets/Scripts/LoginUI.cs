@@ -13,21 +13,23 @@ public class LoginUI : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("awake");
+        Debug.Log("Awake");
         playerManager = FindObjectOfType<PlayerManager>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
+        Debug.Log("Start");
         _StartGame.onClick.AddListener(StartGame);
         _Skin.onValueChanged.AddListener(SetPlayerSkin);
+        playerManager.gameObject.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
     }
 
     void StartGame()
     {
         playerManager.UserID = _Userid.text.ToString();
+        playerManager.gameObject.GetComponent<Rigidbody>().useGravity = true;
         SceneManager.LoadScene("GameScene");
     }
 
