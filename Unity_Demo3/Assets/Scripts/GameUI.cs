@@ -24,6 +24,7 @@ public class GameUI : MonoBehaviour
         {
             _Result.SetActive(true);
             _Result.gameObject.transform.GetChild(2).GetComponent<Text>().text = playerManager.UserID;
+            _Result.gameObject.transform.GetChild(4).GetComponent<Text>().text = Follow.Timer.ToString("0.00");
         }
     }
 }

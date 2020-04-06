@@ -6,7 +6,7 @@ public class PlayerAction : MonoBehaviour
 {
     public Animation _anim;
     private bool _isZaxis = false, _isXaxis = false, _isCrash = false;
-     public static bool _isFinal = false;
+    public static bool _isFinal = false;
     private float start, end;
     private float _starttime;
     private float lerpvalue;
@@ -61,7 +61,7 @@ public class PlayerAction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Obstacle")
+        if (other.tag == "Obstacle")
         {
             _isCrash = true;
             gameObject.transform.position = new Vector3(0, 0.475f, 0);
@@ -70,7 +70,15 @@ public class PlayerAction : MonoBehaviour
         else if (other.name == "Final")
         {
             _isFinal = true;
-            Debug.Log("到達終點");
+            Debug.Log("遊戲結束囉");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Final")
+        {
+            _isFinal = false;
         }
     }
 
