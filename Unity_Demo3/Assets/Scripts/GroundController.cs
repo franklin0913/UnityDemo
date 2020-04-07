@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GroundController : MonoBehaviour
 {
-    public GameObject ground;
+    public GameObject[] ground;
+
     private GameObject _ground;
     private int createpos = 4;
     private float Timer;
@@ -21,7 +22,8 @@ public class GroundController : MonoBehaviour
         Timer += Time.deltaTime;
         if (Timer >= 2)
         {
-            _ground = Instantiate(ground, new Vector3(0, 0, createpos), Quaternion.identity);
+            var i = Random.Range(0, 4);
+            _ground = Instantiate(ground[i], new Vector3(0, 0, createpos), Quaternion.identity);
             createpos += 4;
             Timer = 0;
         }
