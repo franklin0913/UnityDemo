@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameObject bullet;
+    public GameObject Gun;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,18 @@ public class PlayerMove : MonoBehaviour
         else if (Input.GetKey("a"))
         {
             transform.Translate(Vector3.left * Time.deltaTime);
+        }
+        else if (Input.GetKeyDown("z"))
+        {
+            Instantiate(bullet, Gun.transform.position, transform.rotation);
+        }
+        else if (Input.GetKey("e"))
+        {
+            transform.Rotate(0, 10, 0);
+        }
+        else if (Input.GetKey("q"))
+        {
+            transform.Rotate(0, -10, 0);
         }
     }
 }

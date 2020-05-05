@@ -10,6 +10,7 @@ public class AiMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("Player");
         agent = GetComponent<NavMeshAgent>();
     }
 
