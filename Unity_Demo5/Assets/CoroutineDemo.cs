@@ -34,11 +34,18 @@ public class CoroutineDemo : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         system.Play();
+        yield return new WaitUntil(() => Move._change);
+        system.startColor = new Color(255, 0, 0);
+        Debug.Log("END");
         yield return null;
     }
 
     void Print()
     {
         Debug.Log("到這裡啦~~");
+        for(int i=0;i<10; i++)
+        {
+            Debug.Log(i);
+        }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    public AudioSource BGM;
+    public static bool _change = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,15 @@ public class Move : MonoBehaviour
         else if (Input.GetKey("a"))
         {
             transform.Translate(Vector3.left * Time.deltaTime * 2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            BGM.Play();
+        }
+        if (Input.GetKeyDown("z"))
+        {
+            _change = true;
         }
     }
 }
